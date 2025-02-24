@@ -10,3 +10,5 @@ matplotlib
 statsmodels
 openpyxl
 folium
+streamlit-folium
+
