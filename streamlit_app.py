@@ -30,7 +30,8 @@ response.raise_for_status()  # Ensure the request was successful
 fig_json = response.text
 
 # Convert JSON string back to a plotly figure
-fig = pio.from_json(fig_json)
+fig = pio.from_json(fig_json, skip_invalid=True)
+
 
 # Display the plot in Streamlit
 st.plotly_chart(fig)
