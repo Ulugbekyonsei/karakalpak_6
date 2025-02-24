@@ -20,9 +20,7 @@ fig_json = response.text
 
 # Convert JSON string back to a Plotly figure and update colors
 fig = pio.from_json(fig_json, skip_invalid=True)
-
 fig.update_layout(colorway=['red', 'green', 'blue'])
-
 
 # Display the Plotly figure in Streamlit
 st.plotly_chart(fig)
@@ -32,7 +30,7 @@ st.plotly_chart(fig)
 # -----------------------------------------------------------
 st.title("Interactive Cluster Map")
 
-# Replace with the correct URL for your GeoJSON file on GitHub
+# URL for your GeoJSON file on GitHub
 geojson_url = "https://raw.githubusercontent.com/Ulugbekyonsei/karakalpak_6/master/karakalpak_sf_clustered.geojson"
 
 # Fetch the GeoJSON file manually
@@ -49,15 +47,13 @@ else:
     gdf['cluster'] = gdf['cluster'].astype(str)
 
     # Define the color mapping for clusters
-    # Define the color mapping for clusters (light blue, dark blue, mid-blue)
-   color_mapping = {
-    "1": "#DEEBF7",  # Light blue
-    "2": "#08306B",  # Dark blue
-    "3": "#4292C6"   # Mid blue
-        }
+    color_mapping = {
+        "1": "#DEEBF7",  # Light blue
+        "2": "#08306B",  # Dark blue
+        "3": "#4292C6"   # Mid blue
+    }
 
-
-    # Create a Folium map centered on your data.
+    # Create a Folium map centered on your data
     centroid = gdf.geometry.centroid.unary_union.centroid
     m = folium.Map(location=[centroid.y, centroid.x], zoom_start=8)
 
@@ -92,9 +88,9 @@ else:
          padding: 10px;
          ">
     <strong>Cluster Legend</strong><br>
-    <i style="background:green;width:10px;height:10px;display:inline-block;"></i>&nbsp;Cluster 1<br>
-    <i style="background:blue;width:10px;height:10px;display:inline-block;"></i>&nbsp;Cluster 2<br>
-    <i style="background:red;width:10px;height:10px;display:inline-block;"></i>&nbsp;Cluster 3
+    <i style="background:#DEEBF7;width:10px;height:10px;display:inline-block;"></i>&nbsp;Cluster 1 (Light Blue)<br>
+    <i style="background:#08306B;width:10px;height:10px;display:inline-block;"></i>&nbsp;Cluster 2 (Dark Blue)<br>
+    <i style="background:#4292C6;width:10px;height:10px;display:inline-block;"></i>&nbsp;Cluster 3 (Mid Blue)
     </div>
     """
     m.get_root().html.add_child(folium.Element(legend_html))
