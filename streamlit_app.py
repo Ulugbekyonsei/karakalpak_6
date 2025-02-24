@@ -19,7 +19,7 @@ response.raise_for_status()  # Ensure the request was successful
 fig_json = response.text
 
 # Convert JSON string back to a Plotly figure and update colors
-fig = pio.from_json(fig_json)
+fig = pio.from_json(fig_json, skip_invalid=True)
 fig.update_layout(colorway=['red', 'green', 'blue'])
 
 # Display the Plotly figure in Streamlit
