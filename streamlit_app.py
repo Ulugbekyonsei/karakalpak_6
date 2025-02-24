@@ -11,7 +11,7 @@ st.title("Qoraqalpog'iston Respublikasida mahallar bo'yicha tahlil")
 # -----------------------------------------------------------
 # Section 1: Plotly Figure from JSON on GitHub
 # -----------------------------------------------------------
-json_url = "https://raw.githubusercontent.com/Ulugbekyonsei/karakalpak_6/master/myplotly_fig.json"
+json_url = "https://raw.githubusercontent.com/Ulugbekyonsei/karakalpak_6/master/myplotly_fig1.json"
 
 # Fetch the JSON file for the Plotly figure
 response = requests.get(json_url)
@@ -20,9 +20,7 @@ fig_json = response.text
 
 # Convert JSON string back to a Plotly figure and update colors
 fig = pio.from_json(fig_json, skip_invalid=True)
-for trace in fig.data:
-    if 'marker' in trace:
-        trace.marker.color = None  # Remove fixed color to use layout.colorway
+
 fig.update_layout(colorway=['red', 'green', 'blue'])
 
 
