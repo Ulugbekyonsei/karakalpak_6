@@ -9,4 +9,3 @@ plotly
 matplotlib
 statsmodels
 openpyxl
-json
