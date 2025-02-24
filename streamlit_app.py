@@ -1,30 +1,13 @@
 import streamlit as st
-import pandas as pd
-import geopandas as gpd
-import rasterio
-from rasterio.mask import mask
-import numpy as np
-from sklearn.cluster import KMeans
-from sklearn.preprocessing import StandardScaler
-import plotly.express as px
-import matplotlib.pyplot as plt
-import statsmodels.api as sm
-import requests, zipfile, io, tempfile
-import json
+import requests, json
 import plotly.io as pio
 
 st.title("Qoraqalpog'iston Respublikasida mahallar bo'yicha tahlil")
 
-# -------------------------------------------------------------------
-# 1) DOWNLOAD & LOAD DATA FROM GITHUB RAW URLs
-# -------------------------------------------------------------------
-
-
-
-# URL to your JSON file hosted in your GitHub repository (using the raw link)
+# URL to your JSON file hosted on GitHub (raw link)
 json_url = "https://raw.githubusercontent.com/Ulugbekyonsei/karakalpak_5/master/myplotly_fig.json"
 
-# Fetch the JSON file from GitHub
+# Fetch the JSON file
 response = requests.get(json_url)
 response.raise_for_status()  # Ensure the request was successful
 fig_json = response.text
@@ -32,6 +15,16 @@ fig_json = response.text
 # Convert JSON string back to a plotly figure
 fig = pio.from_json(fig_json, skip_invalid=True)
 
+# Option 1: Update layout colorway
+fig.update_layout(colorway=['red', 'green', 'blue'])
 
-# Display the plot in Streamlit
+# Option 2: Alternatively, update each trace individually
+# colors = ['red', 'green', 'blue']
+# for i, trace in enumerate(fig.data):
+#     if 'marker' in trace:
+#         trace.update(marker=dict(color=colors[i % len(colors)]))
+#     elif 'line' in trace:
+#         trace.update(line=dict(color=colors[i % len(colors)]))
+
+# Display the updated plot in Streamlit
 st.plotly_chart(fig)
