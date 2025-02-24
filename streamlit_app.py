@@ -16,15 +16,15 @@ fig_json = response.text
 fig = pio.from_json(fig_json, skip_invalid=True)
 
 # Option 1: Update layout colorway
-fig.update_layout(colorway=['red', 'green', 'blue'])
+# fig.update_layout(colorway=['red', 'green', 'blue'])
 
 # Option 2: Alternatively, update each trace individually
-# colors = ['red', 'green', 'blue']
-# for i, trace in enumerate(fig.data):
-#     if 'marker' in trace:
-#         trace.update(marker=dict(color=colors[i % len(colors)]))
-#     elif 'line' in trace:
-#         trace.update(line=dict(color=colors[i % len(colors)]))
+colors = ['red', 'green', 'blue']
+for i, trace in enumerate(fig.data):
+     if 'marker' in trace:
+         trace.update(marker=dict(color=colors[i % len(colors)]))
+     elif 'line' in trace:
+         trace.update(line=dict(color=colors[i % len(colors)]))
 
 # Display the updated plot in Streamlit
 st.plotly_chart(fig)
