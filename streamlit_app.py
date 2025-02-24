@@ -19,6 +19,7 @@ tungi yorug’lik darajasi va aholi zichligini hisobga olgan holda quyidagi 3 gu
 
 3) Aholi zichligi, tungi yorug’lik darajasi yuqori ammo vegitatsiya darajasi past hududlar 
    (o'rta ko’k): shaharlashgan hududlar
+   
 *Tahlil uchun K-means klasterlash usulidan foydalanildi
 """)
 
