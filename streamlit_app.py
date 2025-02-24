@@ -11,7 +11,7 @@ st.title("Qoraqalpog'iston Respublikasida mahallar bo'yicha tahlil")
 # -----------------------------------------------------------
 # Section 1: Plotly Figure from JSON on GitHub
 # -----------------------------------------------------------
-json_url = "https://raw.githubusercontent.com/Ulugbekyonsei/karakalpak_5/master/myplotly_fig.json"
+json_url = "https://raw.githubusercontent.com/Ulugbekyonsei/karakalpak_6/master/myplotly_fig.json"
 
 # Fetch the JSON file for the Plotly figure
 response = requests.get(json_url)
@@ -31,7 +31,7 @@ st.plotly_chart(fig)
 st.title("Interactive Cluster Map")
 
 # Replace with the correct URL for your GeoJSON file on GitHub
-geojson_url = "https://raw.githubusercontent.com/Ulugbekyonsei/karakalpak_5/master/karakalpak_sf_clustered.geojson"
+geojson_url = "https://raw.githubusercontent.com/Ulugbekyonsei/karakalpak_6/master/karakalpak_sf_clustered.geojson"
 
 # Fetch the GeoJSON file manually
 response_geo = requests.get(geojson_url)
