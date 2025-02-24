@@ -49,8 +49,8 @@ else:
     # Define the color mapping for clusters
     color_mapping = {
         "1": "#DEEBF7",  # Light blue
-        "2": "#08306B",  # Dark blue
-        "3": "#4292C6"   # Mid blue
+        "2": "#4292C6",  # Dark blue 
+        "3": "#08306B"   # Mid blue 
     }
 
     # Create a Folium map centered on your data
