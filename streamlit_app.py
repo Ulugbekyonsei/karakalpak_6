@@ -1,9 +1,9 @@
 import streamlit as st
 import geopandas as gpd
 import requests
-from io import BytesIO
 import folium
 from streamlit_folium import folium_static
+from fiona.io import MemoryFile
 
 st.title("Qoraqalpog'iston Respublikasida mahallar bo'yicha tahlil")
 
@@ -15,8 +15,10 @@ response = requests.get(geojson_url)
 if response.status_code != 200:
     st.error(f"Error fetching GeoJSON file: HTTP {response.status_code}")
 else:
-    # Use BytesIO to convert the response content to a file-like object
-    gdf = gpd.read_file(BytesIO(response.content))
+    # Use Fiona's MemoryFile to load the GeoJSON from bytes
+    with MemoryFile(response.content) as memfile:
+        with memfile.open() as src:
+            gdf = gpd.GeoDataFrame.from_features(src, crs=src.crs)
 
     # Ensure the 'cluster' column is treated as a string for our color mapping
     gdf['cluster'] = gdf['cluster'].astype(str)
