@@ -33,7 +33,8 @@ st.plotly_chart(fig)
 st.title("Qoraqalpog'iston Respublikasida mahallar bo'yicha tahlil")
 
 # URL to your GeoJSON file hosted on GitHub (replace with your actual URL)
-geojson_url = "https://raw.githubusercontent.com/yourusername/yourrepo/main/karakalpak_sf_clustered.geojson"
+geojson_url = "https://raw.githubusercontent.com/Ulugbekyonsei/karakalpak_5/master/karakalpak_sf_clustered.geojson"
+
 
 # Read the GeoJSON file into a GeoDataFrame
 gdf = gpd.read_file(geojson_url)
