@@ -13,7 +13,7 @@ import requests, zipfile, io, tempfile
 import json
 import plotly.io as pio
 
-st.title("Spatial Data Analysis App")
+st.title("Qoraqalpog'iston Respublikasida mahallar bo'yicha tahlil")
 
 # -------------------------------------------------------------------
 # 1) DOWNLOAD & LOAD DATA FROM GITHUB RAW URLs
