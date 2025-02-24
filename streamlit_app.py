@@ -41,7 +41,7 @@ st.plotly_chart(fig)
 # -----------------------------------------------------------
 # Section 2: Interactive Map with Folium using GeoJSON
 # -----------------------------------------------------------
-st.title("Interactive Cluster Map")
+st.title("Xaritada ko'rinishi")
 
 # URL for your GeoJSON file on GitHub
 geojson_url = "https://raw.githubusercontent.com/Ulugbekyonsei/karakalpak_6/master/karakalpak_sf_clustered.geojson"
