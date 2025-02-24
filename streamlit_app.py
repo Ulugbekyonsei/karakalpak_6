@@ -9,7 +9,7 @@ from fiona.io import MemoryFile
 st.title("Qoraqalpog'iston Respublikasida mahallar bo'yicha tahlil")
 st.write("""
 Qoraqalpog'iston Respublikasidagi 423 ta mahallalarni 2024-yilda vegitatsiya darajasi, 
-tungi yorug’lik darajasi va aholi zichligini hisobga olgan holda quyidagi 3 guruhga bo’lindi:
+tungi yorug’lik darajasi va aholi zichligini hisobga olgan holda quyidagi 3 guruhga bo’lindi*:
 
 1) Aholi zichligi, tungi yorug’lik darajasi hamda vegitatsiya darajasi past hududlar 
    (to'q ko'k): juda chekka hududlar
@@ -19,6 +19,7 @@ tungi yorug’lik darajasi va aholi zichligini hisobga olgan holda quyidagi 3 gu
 
 3) Aholi zichligi, tungi yorug’lik darajasi yuqori ammo vegitatsiya darajasi past hududlar 
    (o'rta ko’k): shaharlashgan hududlar
+*Tahlil uchun K-means klasterlash usulidan foydalanildi
 """)
 
 # -----------------------------------------------------------
