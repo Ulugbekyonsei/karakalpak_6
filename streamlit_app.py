@@ -20,7 +20,11 @@ fig_json = response.text
 
 # Convert JSON string back to a Plotly figure and update colors
 fig = pio.from_json(fig_json, skip_invalid=True)
+for trace in fig.data:
+    if 'marker' in trace:
+        trace.marker.color = None  # Remove fixed color to use layout.colorway
 fig.update_layout(colorway=['red', 'green', 'blue'])
+
 
 # Display the Plotly figure in Streamlit
 st.plotly_chart(fig)
