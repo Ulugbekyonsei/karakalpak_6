@@ -49,11 +49,13 @@ else:
     gdf['cluster'] = gdf['cluster'].astype(str)
 
     # Define the color mapping for clusters
-    color_mapping = {
-        "1": "green",
-        "2": "blue",
-        "3": "red"
-    }
+    # Define the color mapping for clusters (light blue, dark blue, mid-blue)
+   color_mapping = {
+    "1": "#DEEBF7",  # Light blue
+    "2": "#08306B",  # Dark blue
+    "3": "#4292C6"   # Mid blue
+        }
+
 
     # Create a Folium map centered on your data.
     centroid = gdf.geometry.centroid.unary_union.centroid
