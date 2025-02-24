@@ -7,13 +7,20 @@ from streamlit_folium import folium_static
 from fiona.io import MemoryFile
 
 st.title("Qoraqalpog'iston Respublikasida mahallar bo'yicha tahlil")
-st.write("
-Qoraqalpog'iston Respublikasidagi 423 ta mahallalarni* 2024-yilda vegitatsiya darajasi, tungi yorug’lik darajasi va aholi zichligini hisobga olgan holda quyidagi 3 guruhga bo’lindi:
-Aholi zichligi, tungi yorug’lik darajasi hamda vegitatsiya darajasi past hududlar (to'q ko'k): juda chekka hududlar
-2)  Aholi zichligi, tungi yorug’lik darajasi past ammo vegitatsiya darajasi nisbatan yuqori hududlar (och ko'k): qishloq xo’jaligi potensiali yuqori hududlar
-3) Aholi zichligi, tungi yorug’lik darajasi yuqori ammo vegitatsiya darajasi past hududlar (o'rta ko’k): shaharlashgan hududlar
+st.write("""
+Qoraqalpog'iston Respublikasidagi 423 ta mahallalarni 2024-yilda vegitatsiya darajasi, 
+tungi yorug’lik darajasi va aholi zichligini hisobga olgan holda quyidagi 3 guruhga bo’lindi:
 
-         ")
+1) Aholi zichligi, tungi yorug’lik darajasi hamda vegitatsiya darajasi past hududlar 
+   (to'q ko'k): juda chekka hududlar
+
+2) Aholi zichligi, tungi yorug’lik darajasi past ammo vegitatsiya darajasi nisbatan yuqori hududlar 
+   (och ko'k): qishloq xo’jaligi potensiali yuqori hududlar
+
+3) Aholi zichligi, tungi yorug’lik darajasi yuqori ammo vegitatsiya darajasi past hududlar 
+   (o'rta ko’k): shaharlashgan hududlar
+""")
+
 # -----------------------------------------------------------
 # Section 1: Plotly Figure from JSON on GitHub
 # -----------------------------------------------------------
